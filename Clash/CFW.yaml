@@ -64,14 +64,6 @@ proxy-providers:
       enable: true
       interval: 120
       url: http://cp.cloudflare.com/generate_204
-  AU:
-    type: file
-    path: ./All.yaml
-    filter: 澳|AU|(?i)Austria
-    health-check:
-      enable: true
-      interval: 120
-      url: http://cp.cloudflare.com/generate_204
 dns:
   enable: true
   ipv6: true
@@ -294,14 +286,6 @@ proxy-groups:
     type: url-test
     use:
       - UK
-    url: http://cp.cloudflare.com/generate_204
-    interval: 600
-    proxies:
-      - REJECT
-  - name: 🇦🇺   澳洲节点
-    type: url-test
-    use:
-      - AU
     url: http://cp.cloudflare.com/generate_204
     interval: 600
     proxies:
